@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose a Character</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .character-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .character-box {
+      border: 2px solid #fff;
+      padding: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      max-width: 250px;
+    }
+
+    .character-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #fff;
+    }
+
+    .character-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Choose a Character</h1>
+
+  <div class="character-container">
+    <a href="https://theorist18.github.io/Characterz/" class="character-box">
+      <img src="https://github.com/user-attachments/assets/4a278d56-793f-4d81-82c2-bd0ac60a4772" alt="Coral">
+    </a>
+    <a href="https://theorist18.github.io/Cashie/" class="character-box">
+      <img src="https://github.com/user-attachments/assets/6d707084-e724-4368-b834-c8ad799661a1" alt="Cassy">
+    </a>
+  </div>
+
+</body>
+</html>
