@@ -5,23 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Choose a Character</title>
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
       background-color: #000;
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       min-height: 100vh;
+      padding: 60px 20px;
+      overflow-x: hidden;
+      animation: fadeIn 1.2s ease-in;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+      opacity: 0.08;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      letter-spacing: 2px;
+      font-size: 3rem;
+      margin-bottom: 50px;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 0 10px #fff;
+      z-index: 1;
     }
 
     .character-container {
@@ -29,25 +60,53 @@
       gap: 40px;
       flex-wrap: wrap;
       justify-content: center;
+      z-index: 1;
     }
 
     .character-box {
       border: 2px solid #fff;
       padding: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.03);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
       cursor: pointer;
-      max-width: 250px;
+      max-width: 200px;
+      text-align: center;
+      position: relative;
     }
 
     .character-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #fff;
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #fff, 0 0 40px #fff;
     }
 
     .character-box img {
       width: 100%;
       height: auto;
+      border-radius: 10px;
       display: block;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .character-box:hover img {
+      filter: grayscale(0%);
+    }
+
+    .character-name {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #fff;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .character-box {
+        max-width: 90%;
+      }
     }
   </style>
 </head>
@@ -56,11 +115,21 @@
   <h1>Choose a Character</h1>
 
   <div class="character-container">
-    <a href="https://theorist18.github.io/Characterz/" class="character-box">
-      <img src="https://github.com/user-attachments/assets/4a278d56-793f-4d81-82c2-bd0ac60a4772" alt="Coral">
+    <a href="https://theorist18.github.io/Characterz/" class="character-box" title="Sugoie – The Oceanic Warrior">
+      <img src="https://github.com/user-attachments/assets/4a278d56-793f-4d81-82c2-bd0ac60a4772" alt="Sugoie">
+      <p class="character-name">Sugoie</p>
     </a>
-    <a href="https://theorist18.github.io/Cashie/" class="character-box">
-      <img src="https://github.com/user-attachments/assets/6d707084-e724-4368-b834-c8ad799661a1" alt="Cassy">
+    <a href="https://theorist18.github.io/Cashie/" class="character-box" title="Cashie – The Dreamer Healer">
+      <img src="https://github.com/user-attachments/assets/6d707084-e724-4368-b834-c8ad799661a1" alt="Cashie">
+      <p class="character-name">Cashie</p>
+    </a>
+    <a href="https://theorist18.github.io/Makie/" class="character-box" title="Makie – The Mystic Creator">
+      <img src="https://github.com/user-attachments/assets/faa93561-fdce-4776-bf9a-4ed37a6f56e8" alt="Makie">
+      <p class="character-name">Makie</p>
+    </a>
+    <a href="https://theorist18.github.io/Ejeie/" class="character-box" title="Ejeie – The Arcane Tactician">
+      <img src="https://github.com/user-attachments/assets/f159f692-5065-465a-a22d-4860cb12361e" alt="Ejeie">
+      <p class="character-name">Ejeie</p>
     </a>
   </div>
 
